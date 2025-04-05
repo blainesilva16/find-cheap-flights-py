@@ -1,5 +1,8 @@
-import requests
+import requests, os
 import datetime
+
+API_KEY = os.getenv("API_KEY")
+API_SECRET = os.getenv("API_SECRET")
 
 class FlightSearch:
     #This class is responsible for talking to the Flight Search API.
@@ -13,8 +16,8 @@ class FlightSearch:
         }
         data = {
             "grant_type": "client_credentials",
-            "client_id": "xH5KI20n6gTNKzGAkLsAjXHcZMbt57qA",  # THIS IS THE API_KEY FOR THE APPLICATION
-            "client_secret": "tkW8aDAkCZVL0td4"               # THIS IS THE API_SECRET FOR THE APPLICATION
+            "client_id": API_KEY,                  # THIS IS THE API_KEY FOR THE APPLICATION
+            "client_secret": API_SECRET            # THIS IS THE API_SECRET FOR THE APPLICATION
         }
 
         get_token = requests.post(
