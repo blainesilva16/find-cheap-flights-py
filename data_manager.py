@@ -3,7 +3,7 @@ import requests
 class DataManager:
     #This class is responsible for talking to the Google Sheet.
     def __init__(self, flight_search):
-        self.endpoint = "https://api.sheety.co/9d76aafa0f358f65bf8ebf8b052a4b49/flightDeals/prices"
+        self.endpoint = f"https://api.sheety.co/{my_sheet_id}/flightDeals/prices"
         self.flight_search = flight_search
 
         # ------------------- I RAN THIS FUNCTION ONCE TO FILL THE IATA CODE FOR EACH COUNTRY IN "Copy of Flight Deals" file
@@ -26,7 +26,7 @@ class DataManager:
         #     {'city': 'Dublin','iataCode': 'DBN','lowestPrice': 378,'id': 10
         #     }]
 
-        # HERE COMES THE ARRAY WITH THE BIG JSON RESPONSE 
+        # HERE COMES THE ARRAY WITH THE BIG JSON RESPONSE, I REMOVED SOME PARTS
         # self.flights = [
         #     {'meta': ... 'https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=LON&destinationLocationCode=DBN&departureDate=2025-04-06&returnDate=2025-05-05&adults=1&nonStop=true&currencyCode=GBP&max=2'}}, 'data': []}
         # ]
